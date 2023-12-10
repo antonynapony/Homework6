@@ -3,8 +3,62 @@
     public class Car
     {
         private string _type;
+        public string Type
+        {
+            get { return _type; }
+            set
+            {
+                if (!string.IsNullOrEmpty(value))
+                {
+                    _type = value;
+                }
+                else
+                {
+                    throw new ArgumentOutOfRangeException();
+                }
+            }
+        }
         private string _color;
-        private string _year;
+        public string Color
+        {
+            get { return _color; }
+            set
+            {
+                if (!string.IsNullOrEmpty(value))
+                {
+                    _color = value;
+                }
+                else
+                {
+                    throw new ArgumentOutOfRangeException();
+                }
+            }
+        }
+        private int _year;
+        public int Year
+        {
+            get { return _year; }
+            set
+            {
+                if (value > 1900)
+                {
+                    _year = value;
+                }
+                else
+                {
+                    throw new ArgumentOutOfRangeException();
+                }
+            }
+        }
+
+        public Car(string type, string color, int year)
+        {
+            Type = type;
+            Color = color;
+            Year = year;
+        }
+
+
 
         public void TurnOn(bool turnOn)
         {
@@ -20,22 +74,22 @@
                 Console.WriteLine("Вы отключили двигатель. Автомобиль заглушен!");
             }
         }
-        public void Type(string type)
+        public string SetType(string type)
         {
-            _type = type;
-            Console.WriteLine($"Тип автомобиля: {_type}");
+            Type = type;
+            return type;
         }
 
-        public void Color(string color)
+        public string SetColor(string color)
         {
-            _color = color;
-            Console.WriteLine($"Цвет автомобиля: {_color}");
+            Color = color;
+            return color;
         }
 
-        public void Year(string year)
+        public int SetYear(int year)
         {
-            _year = year;
-            Console.WriteLine($"Год выпуска автомобиля: {_year}");
+            Year = year;
+            return year;
         }
     }
 }

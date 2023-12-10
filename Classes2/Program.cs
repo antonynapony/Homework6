@@ -9,7 +9,7 @@ namespace Classes2
             Math calculator = new Math();
             Console.WriteLine("Для сложения введите: 1");
             Console.WriteLine("Для вычитания введите: 2");
-            Console.WriteLine("Для усножения введите: 3");
+            Console.WriteLine("Для умножения введите: 3");
             Console.WriteLine("Для деления введите: 4");
             Console.WriteLine("Введите номер операции, которую хотели бы совершить: ");
             bool isParseSuccess = int.TryParse(Console.ReadLine(), out int operationNumber);
@@ -21,16 +21,16 @@ namespace Classes2
                 switch (operationNumber)
                 {
                     case 1:
-                        calculator.Add(firstOperand, secondOperand);
+                        Console.WriteLine(calculator.Add(firstOperand, secondOperand));
                         break;
                     case 2:
-                        calculator.Difference(firstOperand, secondOperand);
+                        Console.WriteLine(calculator.Difference(firstOperand, secondOperand));
                         break;
                     case 3:
-                        calculator.Multiple(firstOperand, secondOperand);
+                        Console.WriteLine(calculator.Multiple(firstOperand, secondOperand));
                         break;
                     case 4:
-                        calculator.Divide(firstOperand, secondOperand);
+                        Console.WriteLine(calculator.Divide(firstOperand, secondOperand));
                         break;
                 }
             }

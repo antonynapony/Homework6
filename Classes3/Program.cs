@@ -4,8 +4,17 @@
     {
         static void Main(string[] args)
         {
+            Car car = new Car("Седан", "Коричневый", 2014);
+            Console.WriteLine(car.Type);
+            Console.WriteLine(car.Color);
+            Console.WriteLine(car.Year);
+            car.SetType("Минивэн");
+            car.SetColor("Черный");
+            car.SetYear(1997);
+            Console.WriteLine(car.Type);
+            Console.WriteLine(car.Color);
+            Console.WriteLine(car.Year);
             int condition;
-            Car engine = new Car();
             Console.WriteLine("Введите <0>, если двигатель выключен");
             Console.WriteLine("Введите <1>, если двигатель включен");
             bool isParseSuccess = int.TryParse(Console.ReadLine(), out condition);
@@ -13,11 +22,11 @@
             {
                 if (condition == 0)
                 {
-                    engine.TurnOff(true);
+                    car.TurnOff(true);
                 }
                 else if (condition == 1)
                 {
-                    engine.TurnOn(true);
+                    car.TurnOn(true);
                 }
             }
             else
@@ -25,16 +34,6 @@
                 Console.WriteLine("Неверно задано значение!");
                 return;
             }
-                Car parameters = new Car();
-                Console.Write("Укажите тип: ");
-                string type = Console.ReadLine();
-                Console.Write("Укажите цвет: ");
-                string color = Console.ReadLine();
-                Console.Write("Укажите год: ");
-                string year = Console.ReadLine();
-                parameters.Type(type);
-                parameters.Color(color);
-                parameters.Year(year);
-            }
         }
     }
+}

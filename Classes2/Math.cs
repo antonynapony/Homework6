@@ -4,25 +4,29 @@
     {
         public Math() { }
 
-        public void Add(double operandA, double operandB)
+        public double Add(double operandA, double operandB)
         {
             double sum = operandA + operandB;
-            Console.WriteLine($"{operandA} + {operandB} = {sum}");
+            return sum;
         }
-        public void Multiple(double operandA, double operandB)
+        public double Multiple(double operandA, double operandB)
         {
             double sum = operandA * operandB;
-            Console.WriteLine($"{operandA} * {operandB} = {sum}");
+            return sum;
         }
-        public void Divide(double operandA, double operandB)
+        public double Divide(double operandA, double operandB)
         {
-            double sum = operandA / operandB;
-            Console.WriteLine($"{operandA} / {operandB} = {sum}");
+            if (operandB != 0)
+            {
+                double sum = operandA / operandB;
+                return sum;
+            }
+                throw new DivideByZeroException();
         }
-        public void Difference(double operandA, double operandB)
+        public double Difference(double operandA, double operandB)
         {
             double sum = operandA - operandB;
-            Console.WriteLine($"{operandA} - {operandB} = {sum}");
+            return sum;
         }
     }
 }
